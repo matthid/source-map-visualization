@@ -4,6 +4,68 @@ Initial idea from https://github.com/sokra/source-map-visualization
 
 This app allows to debug and visualize source maps.
 
+
+## Usage (cli tool)
+
+### Global installation
+
+```
+npm install @matthid/source-map-visualization -g 
+```
+
+Starts a webserver for the given sourcemap files and lets you choose the file in the UI. 
+
+Arguments:
+```
+
+--port={port}                                                         Port to use (defaults to 8085)
+--sm:{originalFile};{compiled.js};{sourcemap.js.map}       
+--sm:{originalFile};{compiled.js};{sourcemap.js.map};{name}           Add the specified file. If {name} is ommited {originalFile} is used in the UI.
+```
+
+### Local installation 
+
+```
+npm install --save-dev @matthid/source-map-visualization
+```
+
+
+add npm script to `package.json`:
+
+```json
+{
+  "scripts": {
+    "check-sourcemaps": "source-map-visualization --sm=./src/fable-library/Array.fs;./build/fable-library/Array.js;./build/fable-library/Array.js.map"
+    // others
+  },
+  // dependencies
+}
+```
+
+See global installation for arguments.
+
+Run npm
+
+```
+npm run check-sourcemaps
+```
+
+
+### As Library
+
+```js
+let path = require("path");
+let app = require("@matthid/source-map-visualization");
+let clientDir = path.resolve(__dirname, "../dist/Client");
+// Start like CLI
+app.startServerWithArgs(clientDir, process.argv); // argv given as specified in global installation
+// Specifiy manually
+let files =
+  [ { name: "Array.fs", converted: "./dist/Array.js", sourceMap: "./dist/Array.js.map", original: "./src/Array.ts" } ];
+app.startServer(clientDir, port, files)
+```
+
+
 ## Install pre-requisites
 
 You'll need to install the following pre-requisites in order to build the Source Map Visualizer
