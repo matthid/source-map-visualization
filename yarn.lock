@@ -9,7 +9,7 @@
   dependencies:
     "@babel/highlight" "^7.0.0"
 
-"@babel/core@^7.4.4":
+"@babel/core@^7.4.3", "@babel/core@^7.4.4":
   version "7.5.5"
   resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.5.5.tgz#17b2686ef0d6bc58f963dddd68ab669755582c30"
   integrity sha512-i4qoSr2KTtce0DmkuuQBV4AuQgGPUcPXMr9L5MyYAtk06z068lQ10a4O009fe5OB/DfNV+h+qqT7ddNV8UnRjg==
@@ -424,7 +424,7 @@
     "@babel/helper-plugin-utils" "^7.0.0"
     babel-plugin-dynamic-import-node "^2.3.0"
 
-"@babel/plugin-transform-modules-commonjs@^7.5.0":
+"@babel/plugin-transform-modules-commonjs@^7.4.3", "@babel/plugin-transform-modules-commonjs@^7.5.0":
   version "7.5.0"
   resolved "https://registry.yarnpkg.com/@babel/plugin-transform-modules-commonjs/-/plugin-transform-modules-commonjs-7.5.0.tgz#425127e6045231360858eeaa47a71d75eded7a74"
   integrity sha512-xmHq0B+ytyrWJvQTc5OWAC4ii6Dhr0s22STOoydokG51JjWhyYo5mRPXoi+ZmtHQhZZwuXNN+GG5jy5UZZJxIQ==
@@ -2353,6 +2353,17 @@ fable-babel-plugins@^2.2.0:
   resolved "https://registry.yarnpkg.com/fable-babel-plugins/-/fable-babel-plugins-2.2.0.tgz#2c61be1bd1afb1f03da4e66ccaa1bfecf92063a3"
   integrity sha512-4g8CIyXCILk5LLiwNPtvtrPy3YuV5eJV18SYJCZxu3A1BSKNvPGHLSg5YcFJ2zt4qmBvSkBewlQ2bVQYG+TnrQ==
 
+fable-compiler-js@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/fable-compiler-js/-/fable-compiler-js-1.0.4.tgz#1395328d92d49e3f1da0f36e12770c6957626b1b"
+  integrity sha512-xhb9bPA+q/H1wB1k226k8zkWW8hhagGBjtGRfyKzCmdJ4Wb/tjZxhkRwNUSd7bOQ3oXszz//TRhrsL58dllZGQ==
+  dependencies:
+    "@babel/core" "^7.4.3"
+    "@babel/plugin-transform-modules-commonjs" "^7.4.3"
+    fable-babel-plugins "^2.2.0"
+    fable-metadata "^1.1.2"
+    fable-standalone "^1.1.4"
+
 fable-compiler@^2.3.3:
   version "2.3.12"
   resolved "https://registry.yarnpkg.com/fable-compiler/-/fable-compiler-2.3.12.tgz#b8e2832ac72f627dc7368c9282d28eb622a89a86"
@@ -2364,6 +2375,16 @@ fable-loader@^2.1.6:
   integrity sha512-1z8EoNWpNDRrGycygO0j63URniv0FjX5EZHjfnnDYbC9+bj2aOY2xGBGK1Mxohk3D4SfK63b5t5vXKOGqUPRzQ==
   dependencies:
     fable-babel-plugins "^2.2.0"
+
+fable-metadata@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/fable-metadata/-/fable-metadata-1.1.2.tgz#81a051d69b2008060bde6b7be04c5f242e41683d"
+  integrity sha512-NKnVQjgaouiMTNmRTzKmgZ43pSbOkP/zRCs79vKO4WFWL1MQK4/YkxXojHC45eaoGHbfNJC48A8Yi+Oj1YOB3A==
+
+fable-standalone@^1.1.4:
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/fable-standalone/-/fable-standalone-1.1.4.tgz#2874c0149d2c8a695abf549102a985daa4056d3f"
+  integrity sha512-3GlrzOSusLiG1+PWnl6vR/RuIFHwaHBy9b+3S/N3OjF3ozOzjtXRaAU4NCLaRnxUokco8rYyuhGDOtuS3byqpg==
 
 fast-deep-equal@^2.0.1:
   version "2.0.1"

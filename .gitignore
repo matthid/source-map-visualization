@@ -2,7 +2,9 @@
 .fake/
 .vs/
 obj/
-bin/
+**/bin/
+!/bin
+dist/
 packages/
 paket-files/
 node_modules/
@@ -14,3 +16,5 @@ release.sh
 *.DotSettings.user
 deploy
 .ionide/
+
+*.tgz

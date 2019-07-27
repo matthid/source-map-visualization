@@ -18,7 +18,7 @@ var CONFIG = {
     indexHtmlTemplate: './index.html',
     fsharpEntry: './Server.fsproj',
     //cssEntry: './style.scss',
-    outputDir: './deploy',
+    outputDir: './../../dist/Server',
     assetsDir: './public',
     devServerPort: 8080,
     // When using webpack-dev-server, you may need to redirect some calls
@@ -70,7 +70,9 @@ module.exports = {
     // to prevent browser caching if code changes
     output: {
         path: resolve(CONFIG.outputDir),
-        filename: isProduction ? '[name].[hash].js' : '[name].js'
+        filename: '[name].js',
+        library: '@matthid/source-map-visualization',
+        libraryTarget: 'umd'
     },
     mode: isProduction ? 'production' : 'development',
     devtool: isProduction ? 'source-map' : 'eval-source-map',

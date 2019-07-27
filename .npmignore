@@ -1,0 +1,10 @@
+*
+!dist/*
+!dist/Client/*
+!dist/Server/*
+!bin/*
+!package.json
+!package-lock.json
+!yarn.lock
+!README.md
+!RELEASE_NOTES.md
