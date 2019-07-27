@@ -1,0 +1,5 @@
+group Server
+    FSharp.Core
+    Fable.Core
+    Fable.Node
+    Thoth.Fetch
