@@ -9,7 +9,7 @@ function sanitize(text) {
 	return escapeHTML(text);
 }
 
-module.exports = function(map, generatedCode, sources) {
+export default function(map, generatedCode, sources) {
 	var generatedSide = [];
 	var originalSide = [];
 	var mappingsSide = [];

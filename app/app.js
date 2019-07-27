@@ -3,7 +3,7 @@ var SourceMap = require("source-map");
 var UglifyJS = require("./uglify-js");
 var generateHtml = require("./generateHtml");
 
-var exampleKinds = ["coffee", "simple-coffee", "typescript", "babel", "sass"];
+var exampleKinds = ["coffee", "simple-coffee", "typescript", "babel", "sass", "fable-array"];
 var SOURCE_MAPPING_URL_REG_EXP = /\/\/[@#]\s*sourceMappingURL\s*=\s*data:[^\n]*?base64,([^\n]*)/;
 var SOURCE_MAPPING_URL_REG_EXP2 = /\/\*\s*[@#]\s*sourceMappingURL\s*=\s*data:[^\n]*?base64,([^\n]*)\s*\*\//;
 
@@ -151,11 +151,18 @@ $(function() {
 
 		} else {
 			if(exampleKinds.indexOf(exampleKind) < 0) exampleKind = "typescript";
-			var exampleJs = require("!raw!../example/"+exampleKind+"/example.js");
-			var exampleMap = require("!json!../example/"+exampleKind+"/example.map");
-			var sources = exampleMap.sourcesContent;
-			if(!sources) {
-				sources = [require("!raw!../example/"+exampleKind+"/example")];
+			if(exampleKind.startsWith("fable-")){
+				var exampleJs = require("!raw!../../../build/fable-library/Array.js");
+				var exampleMap = require("!json!../../../build/fable-library/Array.js.map");
+				var sources = [require("!raw!../../../src/fable-library/Array.fs")];
+				exampleMap.file = "Array.js";
+			} else {
+				var exampleJs = require("!raw!../example/"+exampleKind+"/example.js");
+				var exampleMap = require("!json!../example/"+exampleKind+"/example.map");
+				var sources = exampleMap.sourcesContent;
+				if(!sources) {
+					sources = [require("!raw!../example/"+exampleKind+"/example")];
+				}
 			}
 			loadExample(sources, exampleJs, exampleMap);
 			$(".custom-link").text("");
